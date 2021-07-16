@@ -4,8 +4,9 @@ import { assertEquals } from "https://deno.land/std@0.100.0/testing/asserts.ts";
 Deno.test(
   "install all available scripts successfully",
   async (): Promise<void> => {
-    const status = await install();
+    const status = await install(["--root", "."]);
     assertEquals(status.success, true);
+    Deno.removeSync("bin", { recursive: true });
   }
 );
 

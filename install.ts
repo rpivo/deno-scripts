@@ -4,10 +4,10 @@ enum Flags {
   ROOT = "--root",
 }
 
-export async function install() {
+export async function install(args?: Array<string>) {
   console.log("\nInstalling scripts...");
 
-  const flags = parseArguments(Deno.args);
+  const flags = parseArguments(args ?? Deno.args);
 
   const Scripts: { [key: string]: Array<string> } = {
     "build.ts": [""],
