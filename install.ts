@@ -1,5 +1,6 @@
+import runCommand from "./util/runCommand.ts";
+
 export async function install() {
-  // TODO: figure out how to make these logs testable
   console.log("\nInstalling scripts...\n");
 
   const Scripts: { [key: string]: Array<string> } = {
@@ -10,26 +11,19 @@ export async function install() {
     "test.ts": [""],
   };
 
+  let status = <Deno.ProcessStatus>{};
+
   for (const dirEntry of Deno.readDirSync(".")) {
     const { name } = dirEntry;
 
     if (name in Scripts) {
-      const p = Deno.run({
-        cmd: ["deno", "install", name, ...Scripts[name]],
-        stderr: "piped",
-        stdout: "piped",
-      });
-
-      const [status, stdout, stderr] = await Promise.all([
-        p.status(),
-        p.output(),
-        p.stderrOutput(),
-      ]);
-
-      p.close();
+      status = await runCommand(["deno", "install", name, ...Scripts[name]]);
+      if (!status.success) return status;
     }
   }
 
-  // TODO: figure out how to make these logs testable
-  console.log("Installation complete.\n");
+  console.log("Installation complete.");
+  return status;
 }
+
+if (import.meta.main) install();
