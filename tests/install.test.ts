@@ -1,4 +1,4 @@
-import { install } from "../install.ts";
+import { install, parseArguments } from "../install.ts";
 import { assertEquals } from "https://deno.land/std@0.100.0/testing/asserts.ts";
 
 Deno.test(
@@ -50,5 +50,23 @@ Deno.test(
 
 Deno.test(
   "allow the user to install scripts to a different location",
+  (): void => {}
+);
+
+Deno.test(
+  "parseArguments(): take all the arguments and generate an object of keys that represent flags and values that represent the values of these flags",
+  (): void => {
+    const args = ["--foo", "hello", "--bar", "goodbye", "--baz", "haha"];
+    const flags = parseArguments(args);
+    assertEquals(flags, {
+      "--bar": "goodbye",
+      "--baz": "haha",
+      "--foo": "hello",
+    });
+  }
+);
+
+Deno.test(
+  "parseArguments(): remove keys that do not have a value",
   (): void => {}
 );
