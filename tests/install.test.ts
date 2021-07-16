@@ -37,3 +37,18 @@ Deno.test(
   "allow the user to type a different name in when there is a preinstalled script with the same name as one of the scripts currently being installed",
   (): void => {}
 );
+
+Deno.test(
+  "allow the user to install the script with the --no-privileges flag",
+  (): void => {}
+);
+
+Deno.test(
+  "allow the use of all native Deno flags for the native Deno install script",
+  (): void => {}
+);
+
+Deno.test(
+  "allow the user to install scripts to a different location",
+  (): void => {}
+);
