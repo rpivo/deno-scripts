@@ -30,11 +30,8 @@ Deno.test({
   name: "lint(): run successfully",
   async fn(): Promise<void> {
     Deno.writeTextFileSync("temp.ts", "console.log();");
-
-    const r = await lint();
-
-    assertEquals(r.status.success, true);
-
+    const status = await lint();
+    assertEquals(status.success, true);
     Deno.removeSync("temp.ts");
   },
 });
