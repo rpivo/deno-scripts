@@ -51,7 +51,13 @@ Deno.test(
 
 Deno.test(
   "allow the user to install scripts to a different location",
-  (): void => {}
+  async (): Promise<void> => {
+    Deno.mkdirSync("./foo");
+    await install(["--root", "./foo"]);
+    const [bin] = [...Deno.readDirSync("./foo")];
+    assertEquals(bin.name, "bin");
+    Deno.removeSync("./foo", { recursive: true });
+  }
 );
 
 Deno.test(
