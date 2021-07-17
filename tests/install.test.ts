@@ -61,7 +61,7 @@ Deno.test(
 );
 
 Deno.test(
-  "parseArguments(): take all the arguments and generate an object of keys that represent flags and values that represent the values of these flags",
+  "parseArguments() should take all the arguments and generate an object of keys that represent flags and values that represent the values of these flags",
   (): void => {
     const args = ["--foo", "hello", "--bar", "goodbye", "--baz", "haha"];
     const flags = parseArguments(args);
@@ -74,6 +74,6 @@ Deno.test(
 );
 
 Deno.test(
-  "parseArguments(): remove keys that do not have a value",
+  "parseArguments() should remove keys that do not have a value",
   (): void => {}
 );
