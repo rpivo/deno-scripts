@@ -1,7 +1,7 @@
 import { lint } from "../build.ts";
 import { assertEquals } from "https://deno.land/std@0.100.0/testing/asserts.ts";
 
-Deno.test("run clean() before building", () => {});
+Deno.test("run the clean script before building", () => {});
 
 Deno.test("run lint() before building", () => {});
 
@@ -26,10 +26,7 @@ Deno.test(
   () => {}
 );
 
-Deno.test(
-  "bundle all source code after linting and formatting",
-  () => {}
-);
+Deno.test("bundle all source code after linting and formatting", () => {});
 
 Deno.test(
   "deposit the bundled code in the 'dist' folder after bundling",
@@ -41,10 +38,7 @@ Deno.test(
   () => {}
 );
 
-Deno.test(
-  "provide a flag to set the source folder to be built",
-  () => {}
-);
+Deno.test("provide a flag to set the source folder to be built", () => {});
 
 Deno.test(
   "allow the use of all native Deno flags for the native Deno bundle script",
