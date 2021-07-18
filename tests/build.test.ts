@@ -29,7 +29,7 @@ Deno.test(
 Deno.test("bundle all source code after linting and formatting", () => {});
 
 Deno.test(
-  "deposit the bundled code in the 'dist' folder after bundling",
+  "deposit the bundled code in the target folder after bundling",
   () => {}
 );
 

@@ -2,7 +2,7 @@ import { install, parseArguments } from "../install.ts";
 import { assertEquals } from "https://deno.land/std@0.100.0/testing/asserts.ts";
 
 Deno.test(
-  "install all available scripts successfully",
+  "install all available scripts successfully if the --scripts flag is not used",
   async (): Promise<void> => {
     const status = await install(["--root", "."]);
     assertEquals(status.success, true);

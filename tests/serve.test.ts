@@ -3,7 +3,10 @@ Deno.test(
   () => {}
 );
 
-Deno.test("create a server on localhost:0", () => {});
+Deno.test(
+  "create a server on localhost:0, unless a port is specified in a locally defined scripts.toml file",
+  () => {}
+);
 
 Deno.test(
   "pick a random localhost port to serve on, so long as that port is not in use",
