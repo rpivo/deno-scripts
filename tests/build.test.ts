@@ -51,3 +51,13 @@ Deno.test("lint() should run successfully", async (): Promise<void> => {
   assertEquals(status.success, true);
   Deno.removeSync("temp.ts");
 });
+
+Deno.test(
+  "check scripts.toml to get the source folder of the project, if it exists",
+  () => {}
+);
+
+Deno.test(
+  "check scripts.toml to get the target folder of the project, if it exists",
+  () => {}
+);

@@ -38,3 +38,13 @@ Deno.test(
 Deno.test("provide a flag to set the port", () => {});
 
 Deno.test("provide a flag to disable refresh", () => {});
+
+Deno.test(
+  "check the local scripts.toml file for the port to be used for serving as a default",
+  () => {}
+);
+
+Deno.test(
+  "check the local scripts.toml file for the 'disable refresh' setting to determine whether or not the server should refresh on changes",
+  () => {}
+);

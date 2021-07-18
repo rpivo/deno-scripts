@@ -77,3 +77,15 @@ Deno.test(
   "parseArguments() should remove keys that do not have a value",
   (): void => {}
 );
+
+Deno.test("generate a default scripts.toml file", (): void => {});
+
+Deno.test(
+  "store the default scripts.toml file in Deno's default cache location",
+  (): void => {}
+);
+
+Deno.test(
+  "allow the use of a `--scripts` flag, which is a list of scripts to be installed",
+  (): void => {}
+);
